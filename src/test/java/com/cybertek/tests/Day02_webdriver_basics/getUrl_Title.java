@@ -1,4 +1,4 @@
-package com.cybertek.tests.Day_2_webdriver_basics;
+package com.cybertek.tests.Day02_webdriver_basics;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

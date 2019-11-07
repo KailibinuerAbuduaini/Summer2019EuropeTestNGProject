@@ -6,10 +6,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Verify_URL_not_changed_1 {
+    /**
+     * open browser
+     *  go to http://practice.cybertekschool.com/forgot_passwordLinks to an external site.
+     *  click on Retrieve password
+     * verify that url did not change
+     **/
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/forgot_password");
         //save url to String variable
+
+
         String expectedUrl = driver.getCurrentUrl();
         // click on Retrieve password
         WebElement retrievePasswordButton = driver.findElement(By.id("form_submit"));
