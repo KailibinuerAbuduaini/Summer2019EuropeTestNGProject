@@ -14,7 +14,7 @@ public class amazonTest {
         search.sendKeys("selenium");
         //WebElement searchButton =driver.findElement(By.xpath("//input[@value='Go']"));
 
-        WebElement searchButton=driver.findElement(By.xpath("//*[@value='Go']"));
+        WebElement searchButton=driver.findElement(By.cssSelector("div.nav-search-submit.nav-sprite"));
         searchButton.click();
 
        WebElement result=driver.findElement(By.xpath("//*[@id=\"search\"]/span[2]/h1/div/div[1]/div/div/span[1]"));
