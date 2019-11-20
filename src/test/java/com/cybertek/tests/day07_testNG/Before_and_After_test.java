@@ -6,7 +6,7 @@ public class Before_and_After_test {
 
     @Test
     public void test1(){
-        System.out.println("This is test 1.");
+        System.out.println("This is hjtest 1.");
     }
 
     @Ignore

@@ -9,17 +9,18 @@ public class TestNGAssertionDemo {
         System.out.println("First Assertion");
         Assert.assertEquals(1, 1);
         System.out.println("Second Assertion");
-        Assert.assertEquals("one","two");
+        Assert.assertEquals("one","one");
         System.out.println("After second ");
     }
     @Test
     public void  test2(){
         String actualTitle="java";
-        String expectedTitle="C#";
+        String expectedTitle="javascript";
         System.out.println("verify me");
-        Assert.assertTrue(actualTitle.startsWith(expectedTitle),"verify title");
+        Assert.assertTrue(expectedTitle.startsWith(actualTitle));
         // verify that email includes @ sign
         Assert.assertTrue("kalbi822@gmail.com".contains("@"),"verify @ in email");
+
     }
     @Test
     public void test3(){
