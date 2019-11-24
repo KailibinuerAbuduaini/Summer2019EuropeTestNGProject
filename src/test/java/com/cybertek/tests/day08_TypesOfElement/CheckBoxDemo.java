@@ -21,7 +21,8 @@ public class CheckBoxDemo {
         Assert.assertFalse(checkbox1.isSelected(),"Verify checkbox 1 is not selected");
         Assert.assertTrue(checkbox2.isSelected(),"Verify checkbox 2 is selected");
         //select the first checkbox
-        checkbox1.click();
+       checkbox1.click();
+        //checkbox2.click(); your test will be fail. it is right do not confuse
         Assert.assertTrue(checkbox1.isSelected(),"Verify checkbox 1 is selected");
         Assert.assertTrue(checkbox2.isSelected(),"Verify checkbox 2 is selected");
 
