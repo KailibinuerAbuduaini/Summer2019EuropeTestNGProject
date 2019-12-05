@@ -24,6 +24,8 @@ public class FileUpload {
     @Test
     public void FileUploadTest() {
         driver.get("http://practice.cybertekschool.com/upload");
+        // user directory (user dir) means origin place of the your file
+        // this line help us to get dynamic path ,then our code will work in other's computers too
         String projextPath=System.getProperty("user.dir");
         String relativePath="/src/test/resources/testfile.txt";
         String filePath=projextPath+relativePath;
