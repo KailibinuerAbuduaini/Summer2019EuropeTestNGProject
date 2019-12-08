@@ -13,8 +13,8 @@ public class Basic_Navigation {
         WebDriver driver=new ChromeDriver();
 
         //open browser
-        //driver.get("http://amazon.com"); bumu exlaydu
-        driver.get("http://google.com");
+        driver.get("http://amazon.com");// bumu exlaydu
+        //driver.get("http://google.com");
        // open website
         System.out.println(driver.getTitle());
 

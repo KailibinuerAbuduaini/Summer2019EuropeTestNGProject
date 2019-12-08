@@ -2,6 +2,7 @@ package com.cybertek.tests.day011_action_JavaScript_Execution;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -62,5 +63,18 @@ public class HoverOverTest {
             Assert.assertTrue(text.isDisplayed());
 
         }
+    }
+    @Test
+    public void staleTest(){
+        driver.get("https://google.com/");
+        WebElement input=driver.findElement(By.name("q"));
+        input.sendKeys("selenium"+ Keys.ENTER);
+        WebElement result=driver.findElement(By.id("resultStats"));
+        Assert.assertTrue(result.isDisplayed());
+
+        //go to google second time
+        driver.navigate().back();
+        input=driver.findElement(By.name("q"));
+        input.sendKeys("java"+Keys.ENTER);
     }
 }
