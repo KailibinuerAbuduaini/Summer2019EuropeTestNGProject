@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class actionsTest {
-    WebDriver driver;
+   WebDriver driver;
     @BeforeMethod
     public void setUpMethod() {
         driver = WebDriverFactory.getDriver("chrome");
