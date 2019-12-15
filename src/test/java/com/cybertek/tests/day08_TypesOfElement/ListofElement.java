@@ -17,7 +17,7 @@ public class ListofElement {
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
       List<WebElement> buttons=driver.findElements(By.tagName("button"));
         System.out.println("buttons.size()"+buttons.size());
-        //verify you got 6 webelement
+        //verify you got 6 webElement
         Assert.assertEquals(buttons.size(),6,"verify we got 6 webelements");
         //enter  iter  click enter selenium will create for each loop for us
         for (WebElement button : buttons) {

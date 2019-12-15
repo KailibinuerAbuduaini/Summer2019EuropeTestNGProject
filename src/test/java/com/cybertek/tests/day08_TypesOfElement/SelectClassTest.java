@@ -30,6 +30,7 @@ public class SelectClassTest {
     public void test2() throws InterruptedException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
+
         //1.locate the dropdown element with unique locator
         WebElement dropdownElement = driver.findElement(By.id("state"));
         //create Select object by passing the element as a constructor

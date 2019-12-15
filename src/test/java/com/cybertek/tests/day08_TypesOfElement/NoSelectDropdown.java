@@ -18,8 +18,9 @@ public class NoSelectDropdown {
         // click Dropdown Link
         dropdownElement.click();
        //  Select Links=new Select(dropdownElement); this is wrong
+        // because this element do not have select tag
        List<WebElement> listoflinks=driver.findElements(By.className("dropdown-item"));
-        System.out.println("number of links"+listoflinks.size());
+        System.out.println("number of links "+listoflinks.size());
         //print text of each element in the list
         for (WebElement listoflink : listoflinks) {
             System.out.println(listoflink.getText());
@@ -27,7 +28,7 @@ public class NoSelectDropdown {
        //print text of first element in the list
       System.out.println(listoflinks.get(0).getText());
         //find the element and click it
-        driver.findElement(By.linkText("Yahoo")).click();
+       // driver.findElement(By.linkText("Yahoo")).click();
         listoflinks.get(3).click();
     }
 }

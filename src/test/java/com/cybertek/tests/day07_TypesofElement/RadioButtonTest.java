@@ -16,21 +16,27 @@ public class RadioButtonTest {
         WebElement blueRadioButton=driver.findElement(By.id("blue"));
         WebElement redRadioButton=driver.findElement(By.id("red"));
 
-        // check radio button selected or not
+       // how to check radio button selected or not ?
+
         System.out.println("if red is selected "+redRadioButton.isSelected());
         System.out.println("if blue is selected"+blueRadioButton.isSelected());
 
-        Assert.assertTrue(blueRadioButton.isSelected(),"verify it is blue");
-        Assert.assertFalse(redRadioButton.isSelected(),"verify red");
 
+        //verify that blue radio button selected
+        Assert.assertTrue(blueRadioButton.isSelected(),"Verify that blue button is selected");
+        //verify that red radio button not selected
+        Assert.assertFalse(redRadioButton.isSelected(),"verify that red button not selected");
+
+        //how to select radio button ?
+        System.out.println("Clicking red radio button");
         redRadioButton.click();
 
         System.out.println("if red is selected "+redRadioButton.isSelected());
-        System.out.println("if blue is selected"+blueRadioButton.isSelected());
+        System.out.println("if blue is selected "+blueRadioButton.isSelected());
         // blue is not selected
-        Assert.assertFalse(blueRadioButton.isSelected(),"verify it is blue");
+        Assert.assertFalse(blueRadioButton.isSelected(),"verify that blue is not selected");
         //red is selected
-        Assert.assertTrue(redRadioButton.isSelected(),"verify red");
+        Assert.assertTrue(redRadioButton.isSelected(),"verify that red is selected");
     }
 
 }

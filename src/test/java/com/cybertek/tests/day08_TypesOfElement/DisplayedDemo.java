@@ -16,6 +16,8 @@ public class DisplayedDemo {
         System.out.println(usernameInput.isDisplayed());
         Assert.assertFalse(usernameInput.isDisplayed(),"Verify that username inputbox is not displayed");
         WebElement startButton = driver.findElement(By.cssSelector("#start>button"));
+
+
         startButton.click();
         Thread.sleep(5000);
         System.out.println(usernameInput.isDisplayed());

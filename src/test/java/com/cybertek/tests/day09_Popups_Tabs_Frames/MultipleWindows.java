@@ -23,6 +23,7 @@ public class MultipleWindows {
     @Test
     public void switchWindowsTest(){
         driver.get("http://practice.cybertekschool.com/windows");
+        System.out.println("Before clicking the link "+driver.getTitle());
 
         // clicking click here Link
         driver.findElement(By.linkText("Click Here")).click();
@@ -48,6 +49,9 @@ public class MultipleWindows {
             }
         }
         System.out.println("After switch to new window , title is: "+driver.getTitle());
+        System.out.println(driver.findElement(By.tagName("h3")).getText());
+
+
 
     }
     @Test

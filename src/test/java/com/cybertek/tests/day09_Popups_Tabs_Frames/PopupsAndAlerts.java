@@ -33,21 +33,25 @@ public class PopupsAndAlerts {
         driver.get("http://practice.cybertekschool.com/javascript_alerts");
         // click JS Alert
         driver.findElement(By.xpath("//button[1]")).click();
-        // Alert is a spechail class provided by selenium. it is for to deal with non html alert
+        // Alert is a special class provided by selenium. it is for to deal with non html alert
          Alert alert=driver.switchTo().alert();
          Thread.sleep(3000);
          // alert.accept---> click  ok in the alert
          alert.accept();
-         // Clicking JS confirm
+         // Clicking for JS confirm
          driver.findElement(By.xpath("//button[2]")).click();
           alert=driver.switchTo().alert();
          // clicking x to close , selecting no/cancel
-         Thread.sleep(3000);
+         Thread.sleep(5000);
          alert.dismiss();
+
+
+
          // Clicking JS prompt
          driver.findElement(By.xpath("//button[3]")).click();
          alert=driver.switchTo().alert();
          // sendKeys()
+         Thread.sleep(3000);
          alert.sendKeys("mike smith");
          alert.accept();
 
