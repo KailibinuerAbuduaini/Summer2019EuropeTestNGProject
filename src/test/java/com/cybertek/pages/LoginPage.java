@@ -22,12 +22,12 @@ public class LoginPage  {
     @FindBy(id="prependedInput2")
     public static WebElement passwordInput;
     @FindBy(id="_submit")
-    public static WebElement loginBtn;
+    public static WebElement LoginBtn;
 
     public static void login(String usernameStr, String passwordStr){
         usernameInput.sendKeys(usernameStr);
         passwordInput.sendKeys(passwordStr);
-        loginBtn.click();
+        LoginBtn.click();
     }
 
 
