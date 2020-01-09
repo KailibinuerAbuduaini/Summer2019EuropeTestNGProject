@@ -11,10 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITest;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +23,7 @@ public class TestBase {
     protected ExtentReports report;
     protected ExtentHtmlReporter htmlReporter;
     protected ExtentTest extentLogger;
+    protected String url;
 
 
 
@@ -54,13 +52,23 @@ public class TestBase {
         report.flush();
     }
     @BeforeMethod
-    public void setUpMethod() {
-
+    @Parameters("env")
+    public void setUpMethod(@Optional String env) {
+        System.out.println("env= "+env);
+        //if env variable is null use default url
+        //if it not null,get url based on env
+        if(env==null){
+            url=ConfigurationReader.get("url");
+        }else{
+          //qa1_url=https://qa1.vytrack.com
+            url=ConfigurationReader.get(env+"_url");
+        }
         driver= Driver.get();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         action=new Actions(driver);
         wait=new WebDriverWait(driver,10);
-        driver.get(ConfigurationReader.get("url"));
+       // url=ConfigurationReader.get("url");// important for your qa environment
+        driver.get(url);
 
     }
     @AfterMethod
