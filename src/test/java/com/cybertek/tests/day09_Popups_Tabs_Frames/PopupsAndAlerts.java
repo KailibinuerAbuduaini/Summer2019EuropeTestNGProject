@@ -19,6 +19,18 @@ public class PopupsAndAlerts {
         Thread.sleep(3000);
        // driver.quit();
     }
+    /*
+    Get Cookies: This statement is used to return the list of all Cookies stored in web browser.
+    manage().getCookies();
+    Get Cookies by name: This statement is used to return the specific cookie according to its name.
+    manage().getCookieNamed(arg0);
+
+    Add Cookies: This statement is used to create and add the cookie.
+    manage().addCookie(arg0)
+
+    Delete Cookies: This statement is used to delete a specific cookie.
+    manage().deleteCookie(arg0);
+     */
     @Test
     public void test1(){
 

@@ -1,14 +1,20 @@
 package com.cybertek.tests.day09_Popups_Tabs_Frames;
 
 import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class HomeWork_Test1_to_Test5 {
     WebDriver driver;
@@ -114,9 +120,46 @@ public class HomeWork_Test1_to_Test5 {
         Assert.assertEquals(actualMesage,expectedMessage);
 
 
+    }
+    @Test
+    public void test6() throws InterruptedException {
+
+        driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+        WebDriverWait w =new WebDriverWait(driver,5);
 
 
+
+
+        String[] names={"Cucumber","Brocolli","Beetroot","Carrot","Potato"};
+        /*
+        driver.findElement(By.partialLinkText("Java & QA Resume course"));
+        Alert alert=driver.switchTo().alert();
+        alert.accept();
+*/
+
+        List<WebElement> products=driver.findElements(By.cssSelector("h4.product-name"));
+
+
+        for(int i=0;i<products.size();i++){
+            String[] name= products.get(i).getText().split("-");
+            String formatedName=name[0].trim();
+
+
+            List itemsName=Arrays.asList(names);
+            int j=0;
+            if(itemsName.contains(formatedName)) {
+                j++;
+                driver.findElements(By.xpath("//div[@class='product-action']/button")).get(i).click();
+                if (j == names.length) {
+                    break;
+                }
+            }
+        }
 
     }
+
 
 }

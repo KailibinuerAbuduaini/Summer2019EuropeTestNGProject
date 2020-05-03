@@ -18,7 +18,7 @@ public class SelectClassTest {
         //make sure the dropdown has select tag name
         WebElement dropDownElement=driver.findElement(By.id("state"));
 
-        // we create select object by passingt the element which is  located dropDownElement as a constructor
+        // we create select object by passing the element which is  located dropDownElement as a constructor
         Select stateList=new Select(dropDownElement);
         // getOptions----->  return all the available from the dropdown list
        List<WebElement> options=stateList.getOptions();
